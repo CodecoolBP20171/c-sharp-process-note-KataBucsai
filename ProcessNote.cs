@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ProcessNote
@@ -16,16 +12,12 @@ namespace ProcessNote
         {
             InitializeComponent();
             dataGridView2.Visible = false;
+            RefreshSelected.Visible = false;
         }
 
         private void ProcessNote_Load(object sender, EventArgs e)
         {
             LoadAllProcesses();
-        }
-
-        private void dataGridView_SelectionChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -37,12 +29,14 @@ namespace ProcessNote
             }
             LoadSelectedProcess();
             dataGridView2.Visible = true;
+            RefreshSelected.Visible = true;
         }
 
         private void RefreshAll_Click(object sender, EventArgs e)
         {            
             dataGridView1.Visible = false;
             dataGridView2.Visible = false;
+            RefreshSelected.Visible = false;
             dataGridView1.Rows.Clear();
             LoadAllProcesses();
             dataGridView1.Visible = true;
@@ -56,6 +50,21 @@ namespace ProcessNote
             LoadSelectedProcess();
             dataGridView2.Visible = true;
 
+        }
+
+        private void SaveNotes_Click(object sender, EventArgs e)
+        {
+            string notes = textBox1.Text;
+            Note.Notes = notes;
+            SaveNotes.Text = "All saved";
+            SaveNotes.BackColor = Color.SpringGreen;
+
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SaveNotes.Text = "Save notes";
+            SaveNotes.BackColor = Color.LightSalmon;
         }
 
         private void LoadAllProcesses()

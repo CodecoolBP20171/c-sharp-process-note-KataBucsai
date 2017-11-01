@@ -8,8 +8,6 @@ namespace ProcessNote
 {
     public class RunningProcesses
     {
-
-
         public static List<Array> GetProcess()
         {
             List<Array> allProcess = new List<Array>();
@@ -48,6 +46,5 @@ namespace ProcessNote
             {
             }
         }
-
     }
 }
