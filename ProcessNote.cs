@@ -63,8 +63,19 @@ namespace ProcessNote
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            SaveNotes.Text = "Save notes";
+            SaveNotes.Text = "Save Notes";
             SaveNotes.BackColor = Color.LightSalmon;
+        }
+
+        private void checkBox1_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                this.TopMost = true;
+            } else
+            {
+                this.TopMost = false;
+            }
         }
 
         private void LoadAllProcesses()

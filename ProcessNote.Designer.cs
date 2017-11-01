@@ -35,6 +35,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SaveNotes = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +46,7 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 39);
+            this.dataGridView1.Location = new System.Drawing.Point(39, 55);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(295, 200);
@@ -56,14 +58,14 @@
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(39, 254);
+            this.dataGridView2.Location = new System.Drawing.Point(39, 270);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(752, 73);
             this.dataGridView2.TabIndex = 1;
             // 
             // Refresh
             // 
-            this.Refresh.Location = new System.Drawing.Point(366, 187);
+            this.Refresh.Location = new System.Drawing.Point(366, 203);
             this.Refresh.Name = "Refresh";
             this.Refresh.Size = new System.Drawing.Size(103, 23);
             this.Refresh.TabIndex = 2;
@@ -73,7 +75,7 @@
             // 
             // RefreshSelected
             // 
-            this.RefreshSelected.Location = new System.Drawing.Point(366, 216);
+            this.RefreshSelected.Location = new System.Drawing.Point(366, 232);
             this.RefreshSelected.Name = "RefreshSelected";
             this.RefreshSelected.Size = new System.Drawing.Size(103, 23);
             this.RefreshSelected.TabIndex = 3;
@@ -83,7 +85,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(496, 39);
+            this.textBox1.Location = new System.Drawing.Point(496, 55);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -94,7 +96,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(493, 23);
+            this.label1.Location = new System.Drawing.Point(493, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 5;
@@ -102,7 +104,7 @@
             // 
             // SaveNotes
             // 
-            this.SaveNotes.Location = new System.Drawing.Point(366, 39);
+            this.SaveNotes.Location = new System.Drawing.Point(366, 55);
             this.SaveNotes.Name = "SaveNotes";
             this.SaveNotes.Size = new System.Drawing.Size(103, 23);
             this.SaveNotes.TabIndex = 6;
@@ -110,9 +112,32 @@
             this.SaveNotes.UseVisualStyleBackColor = true;
             this.SaveNotes.Click += new System.EventHandler(this.SaveNotes_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(39, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Processes";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(738, 12);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(53, 16);
+            this.checkBox1.TabIndex = 9;
+            this.checkBox1.Text = "On Top";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckStateChanged += new System.EventHandler(this.checkBox1_CheckStateChanged);
+            // 
             // ProcessNote
             // 
-            this.ClientSize = new System.Drawing.Size(824, 339);
+            this.ClientSize = new System.Drawing.Size(822, 367);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.SaveNotes);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
@@ -122,6 +147,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ProcessNote";
             this.Text = "ProcessNote";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.ProcessNote_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -139,5 +165,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button SaveNotes;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
